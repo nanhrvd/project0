@@ -1,0 +1,127 @@
+@import url(https://fonts.googleapis.com/css?family=Sofia);
+html, body { height: 100%; }
+
+$nohov_col:  #e0e0e0;
+$hov_col: #d0d0d0;
+$act_col: #505050;
+$height: 40;
+
+@media (min-width: 700px)
+{
+    h1::before
+    {
+        content: "Welcome to my minimalist website";
+    }
+}
+
+@media (max-width: 699px)
+{
+    h1::before
+    {
+        content: "Website";
+    }
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, td {
+    border: 1px solid black;
+    width: 8px * $height;
+    height: 0px + $height;
+}
+
+tr:nth-child(even) {
+  td:nth-child(odd){
+    background-color: black;
+  }
+  td:nth-child(even){
+    background-color: red;
+  }
+}
+
+tr:nth-child(odd) {
+  td:nth-child(odd){
+    background-color: red;
+  }
+  td:nth-child(even){
+    background-color: black;
+  }
+}
+
+#joke {
+  text-decoration: line-through;
+}
+
+%fancy {
+    font-family: 'Sofia';
+}
+
+h2::first-letter {
+    @extend %fancy;
+    font-size: 50px;
+}
+
+p::first-letter {
+    @extend %fancy;
+    font-size: 30px;
+}
+
+img {
+  max-width:60%;
+  max-height:60%;
+  width: auto;
+  height: auto;
+}
+
+#joke {
+
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: $nohov_col;
+}
+
+li a {
+    text-indent: 20px;
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    &:hover {
+        background-color: $hov_col;
+        color: #000;
+        text-decoration: none;
+    }
+    &.active {
+        background-color: $act_col;
+        color: white;
+        text-decoration: none;
+    }
+}
+
+@media (min-width: 700px)
+{
+    h1::before
+    {
+        content: "Welcome to my minimalist website";
+    }
+    li a {
+    text-indent: 10%;
+    }
+}
+
+@media (max-width: 699px)
+{
+    h1::before
+    {
+        content: "Website";
+    }
+    li a {
+        text-indent: 0px;
+    }
+}
